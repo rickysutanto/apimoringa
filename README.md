@@ -2,6 +2,12 @@
 
 ![](https://img.shields.io/github/release/pandao/editor.md.svg)
 
+## URL-URL untuk email OTP
+### URL Aktivasi akun : https://moringaku.id/tools/aktivasi?code={hash}
+### URL Update Warisan : https://moringaku.id/tools/warisan?code={hash}
+### URL Ganti password : https://moringaku.id/?m=changepw&code={hash}
+### URL untuk OTP yang di konfirmasi member : https://moringaku.id/tools/otp?code={hash}
+#
 
 ### 1. /CheckOTP 
 #### - Check OTP apakah masih valid
@@ -12,7 +18,6 @@
 #### - Parameter:
 | Params | Data Type | Mandatory | Description |
 |--|--|--|--|
-| Kind | INT | Y | 0 = Login; 1 = profile; 2 = password |
 | HashData | STRING | Y | data hash yg dikirim ke email nasabah |
 
 
@@ -20,11 +25,13 @@
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
 | Expired | INT| Y | 0 = Active; 1 = Expired |
+| UserId | STRING | Y | member id |
+| UserName | STRING | Y | nama member |
 
 #
 
 ### 2. /ChangePwd 
-#### - Change Password Member
+#### - Permintaan ganti Password oleh Member
 - Sender : **PHP**
 - Target : **Engine**
 
@@ -40,12 +47,12 @@
 #### - Output:
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
-| Result | INT| Y | 0 = OK; -1 = NOT-OK; jika OK Engine kirim email OTP |
+| Result | INT| Y | 0 = OK; -2=Old Password Salah; -1=Not-OK; jika OK Engine kirim email OTP |
 
 #
 
-### 3. /ChangeIdPwd
-#### - Change ID & Pwd Member
+### 3. /ChangeID 
+#### - Permintaan ganti userid oleh Member (hanya berlaku jika field userid2 = null)
 - Sender : **PHP**
 - Target : **Engine**
 
@@ -54,19 +61,19 @@
 | Params | Data Type | Mandatory | Description |
 |--|--|--|--|
 | MemberId | STRING | Y | MemberId = TrxId |
-| User ID | STRING | Y | New User ID |
-| Pwd | STRING | Y | New Password |
+| UserId | STRING | Y | user id baru |
+
 
 
 #### - Output:
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
-| Result | INT| Y | 0 = OK; -1 = NOT-OK , jika ok engine kirim email OTP |
+| Result | INT| Y | 0 = OK; -2=field userid2 not null ; -1=Not-OK; jika OK Engine kirim email OTP |
 
 #
 
 ### 4. /ChangeProfile
-#### - Change Profile Member
+#### - Permintaan ganti Profile oleh Member
 - Sender : **PHP**
 - Target : **Engine**
 
@@ -99,7 +106,7 @@
 #
 
 ### 5. /ChangeWarisan
-#### - Change Data Warisan Member
+#### - Permintaan ganti Data Warisan oleh Member
 - Sender : **PHP**
 - Target : **Engine**
 
@@ -125,8 +132,30 @@
 
 #
 
-### 6. /ChangedConfirm 
-#### - Konfirmasi perubahan setelah menerima OTP
+### 6. /ChangeIdPwd
+#### - Change ID & Pwd Member saat aktivasi
+- Sender : **PHP**
+- Target : **Engine**
+
+
+#### - Parameter:
+| Params | Data Type | Mandatory | Description |
+|--|--|--|--|
+| MemberId | STRING | Y | MemberId = TrxId |
+| User ID | STRING | Y | New User ID |
+| Pwd | STRING | Y | New Password |
+
+
+#### - Output:
+| Param | Data Type | Mandatory | Description |
+|--|--|--|--|
+| Result | INT| Y | 0 = OK; -1 = NOT-OK , jika ok engine update database |
+
+#
+
+### 7. /ChangedConfirm 
+#### - Konfirmasi perubahan setelah menerima OTP. 
+#### Untuk ganti password, ganti profile, & ganti warisan
 - Sender : **PHP**
 - Target : **Engine**
 
