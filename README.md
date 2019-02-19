@@ -5,7 +5,7 @@
 ## URL-URL untuk email OTP
 ### URL Aktivasi akun : https://moringaku.id/tools/aktivasi?code={hash}
 ### URL Update Warisan : https://moringaku.id/tools/warisan?code={hash}
-### URL Ganti password : https://moringaku.id/?m=changepw&code={hash}
+### URL Ganti password : https://moringaku.id/tools/password?code={hash}
 ### URL untuk OTP yang di konfirmasi member : https://moringaku.id/tools/otp?code={hash}
 #
 
