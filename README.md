@@ -41,14 +41,13 @@ $.ajax({
     url: "http://api.moringaku.com/internal/CheckOTP",
     dataType: "json",
     type : "GET",
-    data: "HashData=5D89006A21776A45E050A8C04E0A33D8",
+    data: "hashdata=5D89006A21776A45E050A8C04E0A33D8",
     contentType: "application/json; charset=utf-8",
     success : function(response) {
       console.log(response);
     }
   });
 ```
-#
 
 ##### Sample response:
 ###### Success Response
@@ -56,8 +55,8 @@ $.ajax({
 {
     "expired": 0,
     "memberid": "15012001012",
-    "username": {
-    }
+    "username": "Ahmad fikri",
+    "jenisotp": 1,
 }
 ```
 #
@@ -86,6 +85,31 @@ $.ajax({
 
 #
 
+##### - Sample call:
+###### JQuery Ajax Call 
+```sh
+$.ajax({
+    url: "http://api.moringaku.com/internal/ChangePwd",
+    dataType: "json",
+    type : "GET",
+    data: "memberid=15012001012&oldpassword=paswordlamaku&newpassword=passwordbaruku",
+    contentType: "application/json; charset=utf-8",
+    success : function(response) {
+      console.log(response);
+    }
+  });
+```
+
+##### Sample response:
+###### Success Response
+```sh
+{
+    "result": -2,
+    "message": "wrong old password",
+}
+```
+#
+
 ### 3. /ChangeID 
 #### - Permintaan ganti userid oleh Member (hanya berlaku jika field userid2 = null)
 - Sender : **PHP**
@@ -108,6 +132,31 @@ $.ajax({
 |||| -1=Not-OK |
 | Message | STRING | Y | Jika ada pesan error |
 
+#
+
+##### - Sample call:
+###### JQuery Ajax Call 
+```sh
+$.ajax({
+    url: "http://api.moringaku.com/internal/ChangeID",
+    dataType: "json",
+    type : "GET",
+    data: "memberid=15012001012&userid=moringaku1",
+    contentType: "application/json; charset=utf-8",
+    success : function(response) {
+      console.log(response);
+    }
+  });
+```
+
+##### Sample response:
+###### Success Response
+```sh
+{
+    "result": -2,
+    "message": "already changed before",
+}
+```
 #
 
 ### 4. /ChangeProfile
@@ -145,6 +194,31 @@ $.ajax({
 
 #
 
+##### - Sample call:
+###### JQuery Ajax Call 
+```sh
+$.ajax({
+    url: "http://api.moringaku.com/internal/ChangeProfile",
+    dataType: "json",
+    type : "GET",
+    data: "memberid=15012001012&nonpwp=8100020102910&namapwp=iksan&addnpwp=alam sutera&acctno=3220102910&acctname=iksan harianto&bankname=bca&bankbranch=tebet&emai=iksan@email.com&phone=081299912&whatsapp=0812999912&hideemail=1&hidephone=1&hidewa=1",
+    contentType: "application/json; charset=utf-8",
+    success : function(response) {
+      console.log(response);
+    }
+  });
+```
+
+##### Sample response:
+###### Success Response
+```sh
+{
+    "result": 0,
+    "message": "success",
+}
+```
+#
+
 ### 5. /ChangeWarisan
 #### - Permintaan ganti Data Warisan oleh Member
 - Sender : **PHP**
@@ -174,6 +248,32 @@ $.ajax({
 
 #
 
+##### - Sample call:
+###### JQuery Ajax Call 
+```sh
+$.ajax({
+    url: "http://api.moringaku.com/internal/ChangeWarisan",
+    dataType: "json",
+    type : "GET",
+    data: "memberid=15012001012&BeneficiaryName=iksan&BeneficiaryKtp=3220102910&BeneficiaryDOB=12031971&BeneficiaryEmail=iksan@email.com&BeneficiaryGender=0&BeneficiaryPhone=0812999912&BeneficiaryRelation=istri",
+    contentType: "application/json; charset=utf-8",
+    success : function(response) {
+      console.log(response);
+    }
+  });
+```
+
+##### Sample response:
+###### Success Response
+```sh
+{
+    "result": 0,
+    "message": "success",
+}
+```
+#
+
+
 ### 6. /ChangeIdPwd
 #### - Change ID & Pwd Member saat aktivasi
 - Sender : **PHP**
@@ -195,6 +295,31 @@ $.ajax({
 |||| -1 = NOT-OK |
 | Message | STRING | Y | Jika ada pesan error |
 
+#
+
+##### - Sample call:
+###### JQuery Ajax Call 
+```sh
+$.ajax({
+    url: "http://api.moringaku.com/internal/ChangeIdPwd",
+    dataType: "json",
+    type : "GET",
+    data: "memberid=15012001012&userid=iksan0201&pwd=3220102910",
+    contentType: "application/json; charset=utf-8",
+    success : function(response) {
+      console.log(response);
+    }
+  });
+```
+
+##### Sample response:
+###### Success Response
+```sh
+{
+    "result": 0,
+    "message": "success",
+}
+```
 #
 
 ### 7. /ChangedConfirm 
@@ -219,6 +344,31 @@ $.ajax({
 
 #
 
+##### - Sample call:
+###### JQuery Ajax Call 
+```sh
+$.ajax({
+    url: "http://api.moringaku.com/internal/ChangedConfirm",
+    dataType: "json",
+    type : "GET",
+    data: "hashdata=5D89006A21776A45E050A8C04E0A33D8",
+    contentType: "application/json; charset=utf-8",
+    success : function(response) {
+      console.log(response);
+    }
+  });
+```
+
+##### Sample response:
+###### Success Response
+```sh
+{
+    "result": 0,
+    "message": "success",
+}
+```
+#
+
 ### 8. /CheckID 
 #### - Check userid sudah terpakai / belum. 
 #### Untuk ganti userid saat aktivasi awal
@@ -241,6 +391,30 @@ $.ajax({
 
 #
 
+##### - Sample call:
+###### JQuery Ajax Call 
+```sh
+$.ajax({
+    url: "http://api.moringaku.com/internal/CheckID",
+    dataType: "json",
+    type : "GET",
+    data: "userid=kodokbuduk",
+    contentType: "application/json; charset=utf-8",
+    success : function(response) {
+      console.log(response);
+    }
+  });
+```
+
+##### Sample response:
+###### Success Response
+```sh
+{
+    "result": -1,
+    "message": "already used",
+}
+```
+#
 
 
 
