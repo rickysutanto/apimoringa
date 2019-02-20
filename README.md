@@ -255,7 +255,7 @@ $.ajax({
     url: "http://api.moringaku.com/internal/ChangeWarisan",
     dataType: "json",
     type : "GET",
-    data: "memberid=15012001012&BeneficiaryName=iksan&BeneficiaryKtp=3220102910&BeneficiaryDOB=12031971&BeneficiaryEmail=iksan@email.com&BeneficiaryGender=0&BeneficiaryPhone=0812999912&BeneficiaryRelation=istri",
+    data: "memberid=15012001012&beneficiaryname=iksan&beneficiaryktp=3220102910&beneficiarydob=12031971&beneficiaryemail=iksan@email.com&beneficiarygender=0&beneficiaryphone=0812999912&beneficiaryrelation=istri",
     contentType: "application/json; charset=utf-8",
     success : function(response) {
       console.log(response);
