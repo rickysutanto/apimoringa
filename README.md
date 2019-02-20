@@ -25,7 +25,7 @@
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
 | Expired | INT| Y | 0 = Active; 1 = Expired |
-| UserId | STRING | Y | member id |
+| MemberId | STRING | Y | member id (trxid) |
 | UserName | STRING | Y | nama member |
 | JenisOTP | INT | Y | 1 = Aktivasi Akun |
 |||| 2 = Change Password |
