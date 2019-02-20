@@ -34,6 +34,34 @@
 |||| 5 = Change user id |
 #
 
+##### - Sample call:
+###### JQuery Ajax Call 
+```sh
+$.ajax({
+    url: "http://api.moringaku.com/internal/CheckOTP",
+    dataType: "json",
+    type : "GET",
+    data: "HashData=5D89006A21776A45E050A8C04E0A33D8",
+    contentType: "application/json; charset=utf-8",
+    success : function(response) {
+      console.log(response);
+    }
+  });
+```
+#
+
+##### Sample response:
+###### Success Response
+```sh
+{
+    "expired": 0,
+    "memberid": "15012001012",
+    "username": {
+    }
+}
+```
+#
+
 ### 2. /ChangePwd 
 #### - Permintaan ganti Password oleh Member
 - Sender : **PHP**
