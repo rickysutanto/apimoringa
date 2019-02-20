@@ -27,7 +27,11 @@
 | Expired | INT| Y | 0 = Active; 1 = Expired |
 | UserId | STRING | Y | member id |
 | UserName | STRING | Y | nama member |
-
+| JenisOTP | INT | Y | 1 = Aktivasi Akun |
+|||| 2 = Change Password |
+|||| 3 = Change Profile |
+|||| 4 = Change Warisan |
+|||| 5 = Change user id |
 #
 
 ### 2. /ChangePwd 
@@ -47,7 +51,10 @@
 #### - Output:
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
-| Result | INT| Y | 0 = OK; -2=Old Password Salah; -1=Not-OK; jika OK Engine kirim email OTP |
+| Result | INT| Y | 0 = OK ;Engine kirim email OTP |
+|||| -2=Old Password Salah | 
+|||| -1=Not-OK |
+| Message | STRING | Y | Jika ada pesan error |
 
 #
 
@@ -68,7 +75,10 @@
 #### - Output:
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
-| Result | INT| Y | 0 = OK; -2=field userid2 not null ; -1=Not-OK; jika OK Engine kirim email OTP |
+| Result | INT| Y | 0 = OK; Engine kirim email OTP |
+|||| -2=field userid2 not null |
+|||| -1=Not-OK |
+| Message | STRING | Y | Jika ada pesan error |
 
 #
 
@@ -101,7 +111,9 @@
 #### - Output:
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
-| Result | INT| Y | 0 = OK; -1 = NOT-OK , jika ok engine akan kirim email OTP|
+| Result | INT| Y | 0 = OK; engine akan kirim email OTP|
+|||| -1 = NOT-OK |
+| Message | STRING | Y | Jika ada pesan error |
 
 #
 
@@ -128,7 +140,9 @@
 #### - Output:
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
-| result | INT| Y | 0 = OK; -1 = NOT-OK , jika ok engine akan kirim email OTP|
+| Result | INT| Y | 0 = OK ; engine akan kirim email OTP|
+|||| -1 = NOT-OK |
+| Message | STRING | Y | Jika ada pesan error |
 
 #
 
@@ -149,7 +163,9 @@
 #### - Output:
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
-| Result | INT| Y | 0 = OK; -1 = NOT-OK , jika ok engine update database |
+| Result | INT| Y | 0 = OK; engine update database |
+|||| -1 = NOT-OK |
+| Message | STRING | Y | Jika ada pesan error |
 
 #
 
@@ -169,7 +185,9 @@
 #### - Output:
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
-| Result | INT| Y | 0 = Sukses; -1 = Gagal, jika OK engine confirm perubahan |
+| Result | INT| Y | 0 = Sukses; engine confirm perubahan |
+|||| -1 = Gagal |
+| Message | STRING | Y | Jika ada pesan error |
 
 #
 
