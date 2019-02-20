@@ -191,6 +191,28 @@
 
 #
 
+### 8. /CheckID 
+#### - Check userid sudah terpakai / belum. 
+#### Untuk ganti userid saat aktivasi awal
+- Sender : **PHP**
+- Target : **Engine**
+
+
+#### - Parameter:
+| Params | Data Type | Mandatory | Description |
+|--|--|--|--|
+| UserId| STRING | Y | userid yg mau diperiksa |
+
+
+#### - Output:
+| Param | Data Type | Mandatory | Description |
+|--|--|--|--|
+| Result | INT| Y | 0 = tidak terpakai |
+|||| -1 = sudah terpakai / error |
+| Message | STRING | Y | Jika ada pesan error |
+
+#
+
 
 
 
