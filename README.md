@@ -40,8 +40,11 @@
 $.ajax({
     url: "http://api.moringaku.com/internal/CheckOTP",
     dataType: "json",
-    type : "GET",
-    data: "hashdata=5D89006A21776A45E050A8C04E0A33D8",
+    type : "POST",
+    data: 
+    {
+        "hashdata":"5D89006A21776A45E050A8C04E0A33D8"
+    }
     contentType: "application/json; charset=utf-8",
     success : function(response) {
       console.log(response);
@@ -71,15 +74,13 @@ $.ajax({
 | Params | Data Type | Mandatory | Description |
 |--|--|--|--|
 | MemberId | STRING | Y | MemberId = TrxId |
-| OldPassword | STRING | Y | Password lama |
-| NewPassword | STRING | Y | Password Baru |
+
 
 
 #### - Output:
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
 | Result | INT| Y | 0 = OK ;Engine kirim email OTP |
-|||| -2=Old Password Salah | 
 |||| -1=Not-OK |
 | Message | STRING | Y | Jika ada pesan error |
 
@@ -91,8 +92,11 @@ $.ajax({
 $.ajax({
     url: "http://api.moringaku.com/internal/ChangePwd",
     dataType: "json",
-    type : "GET",
-    data: "memberid=15012001012&oldpassword=paswordlamaku&newpassword=passwordbaruku",
+    type : "POST",
+    data: 
+    {
+        "memberid":"15012001012"
+    }
     contentType: "application/json; charset=utf-8",
     success : function(response) {
       console.log(response);
@@ -104,8 +108,8 @@ $.ajax({
 ###### Success Response
 ```sh
 {
-    "result": -2,
-    "message": "wrong old password",
+    "result": 0,
+    "message": "success",
 }
 ```
 #
@@ -120,15 +124,12 @@ $.ajax({
 | Params | Data Type | Mandatory | Description |
 |--|--|--|--|
 | MemberId | STRING | Y | MemberId = TrxId |
-| UserId | STRING | Y | user id baru |
-
 
 
 #### - Output:
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
 | Result | INT| Y | 0 = OK; Engine kirim email OTP |
-|||| -2=field userid2 not null |
 |||| -1=Not-OK |
 | Message | STRING | Y | Jika ada pesan error |
 
@@ -140,8 +141,11 @@ $.ajax({
 $.ajax({
     url: "http://api.moringaku.com/internal/ChangeID",
     dataType: "json",
-    type : "GET",
-    data: "memberid=15012001012&userid=moringaku1",
+    type : "POST",
+    data: 
+    {
+       "memberid":"15012001012"
+    }
     contentType: "application/json; charset=utf-8",
     success : function(response) {
       console.log(response);
