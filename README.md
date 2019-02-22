@@ -17,7 +17,7 @@
 #### - Parameter:
 | Params | Data Type | Mandatory | Description |
 |--|--|--|--|
-| MemberId | STRING | Y | member id |
+| MemberId | STRING | Y | member id = id di table members |
 | JenisOTP | INT | Y | Jenis OTP |
 |||| 1 = Change Password |
 |||| 2 = Change Profile |
