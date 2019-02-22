@@ -44,10 +44,10 @@ $.ajax({
         "memberid": 12.
         "jenisotp":1,
         "data":
-        {
+        [{
             "nexturl" : "https://moringaku.id/tools/password?code=ABCDEFGH"
             
-        }
+        }]
     }
     contentType: "application/json; charset=utf-8",
     success : function(response) {
