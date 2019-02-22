@@ -88,6 +88,7 @@ $.ajax({
 |||| 3 = Change Profile |
 |||| 4 = Change Warisan |
 |||| 5 = Change user id |
+|||| 6 = proses pembayaran setelah dapat welcome email |
 | data | JSON | N | data temporary jika ada | 
 #
 
@@ -110,17 +111,32 @@ $.ajax({
 ```
 
 ##### Sample response:
-###### Success Response
+###### Success Response aktivasi akun JenisOTP 1
 ```sh
 {
     "result": 0,
     "expired": 0,
-    "memberid": 12,
-    "username": "Ahmad fikri",
+    "memberid": 61,
+    "username": "Rini Purnamasari",
     "jenisotp": 1,
     "data" :
     {
-        "nexturl" : "https://moringaku.id/tools/payment?memberid=12&trxid=134567889",
+        "nexturl" : "",
+        
+    }
+}
+```
+###### Success Response Proses pembayaran JenisOTP 6
+```sh
+{
+    "result": 0,
+    "expired": 0,
+    "memberid": 61,
+    "username": "Rini Purnamasari",
+    "jenisotp": 6,
+    "data" :
+    {
+        "nexturl" : "https://heksainsurance.co.id/heksaecommerce/beli/repayment?trxid=153689959640413612&refid=moringaku",
         
     }
 }
