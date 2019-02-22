@@ -281,4 +281,70 @@ $.ajax({
 #
 
 
+### 6. /UpdateBeneficiary
+#### - Check userid sudah terpakai / belum. 
+#### Untuk ganti userid saat aktivasi awal
+- Sender : **PHP**
+- Target : **Engine**
+
+
+#### - Parameter:
+| Params | Data Type | Mandatory | Description |
+|--|--|--|--|
+| memberid | INT | Y | member id |
+| benname | STRING | Y | nama ahli waris | 
+| benktp | STRING | Y | KTP |
+| bendob | STRING | Y | DOB yyyymmdd |
+| bengender | INT | Y | 0 = pria; 1 = wanita | 
+| benemail | STRING | Y | email |
+| benphone | STRING | N | phone |
+| benrelation | STRING | N | 0 = Suami; 1 = Istri; 2 = Anak; 3 = kakak; 4 = adik |
+
+
+
+#### - Output:
+| Param | Data Type | Mandatory | Description |
+|--|--|--|--|
+| Result | INT| Y | 0 = tidak terpakai |
+|||| -1 = sudah terpakai / error |
+| Message | STRING | Y | Jika ada pesan error |
+
+#
+
+##### - Sample call:
+###### JQuery Ajax Call 
+```sh
+$.ajax({
+    url: "http://api.moringaku.com/internal/CheckID",
+    dataType: "json",
+    type : "POST",
+    data: 
+    {
+        "memberid": 21,
+        "benname" : "ahmad zakhri",
+        "benktp" : "1234567890",
+        "bendob" " "19720811",
+        "bengender" : 0,
+        "benemail" : "ahmad@email.com",
+        "benphone" : "0819929919091",
+        "benrelation" : 2
+        
+    }
+    contentType: "application/json; charset=utf-8",
+    success : function(response) {
+      console.log(response);
+    }
+  });
+```
+
+##### Sample response:
+###### Success Response
+```sh
+{
+    "result": -1,
+    "message": "error",
+}
+```
+#
+
 
