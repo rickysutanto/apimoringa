@@ -118,6 +118,11 @@ $.ajax({
     "memberid": 12,
     "username": "Ahmad fikri",
     "jenisotp": 1,
+    "data" :
+    {
+        "nexturl" : "https://moringaku.id/tools/payment?memberid=12&trxid=134567889",
+        
+    }
 }
 ```
 #
