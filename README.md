@@ -17,7 +17,7 @@
 #### - Parameter:
 | Params | Data Type | Mandatory | Description |
 |--|--|--|--|
-| MemberId | STRING | Y | member id = id di table members |
+| MemberId | INT | Y | member id = id di table members |
 | JenisOTP | INT | Y | Jenis OTP |
 |||| 1 = Change Password |
 |||| 2 = Change Profile |
@@ -39,7 +39,7 @@ $.ajax({
     type : "POST",
     data: 
     {
-        "memberid":"123456".
+        "memberid": 12.
         "jenisotp":1,
         "data":
         {
@@ -80,7 +80,7 @@ $.ajax({
 |--|--|--|--|
 | Result | INT | Y | 0 = OK; -1 = Error |
 | Expired | INT| Y | 0 = Active; -1 = Expired |
-| MemberId | STRING | Y | member id (trxid) |
+| MemberId | INT | Y | member id (trxid) |
 | UserName | STRING | Y | nama member |
 | JenisOTP | INT | Y | 1 = Aktivasi Akun |
 |||| 2 = Change Password |
@@ -114,7 +114,7 @@ $.ajax({
 {
     "result": 0,
     "expired": 0,
-    "memberid": "15012001012",
+    "memberid": 12,
     "username": "Ahmad fikri",
     "jenisotp": 1,
 }
@@ -130,7 +130,7 @@ $.ajax({
 #### - Parameter:
 | Params | Data Type | Mandatory | Description |
 |--|--|--|--|
-| MemberId | STRING | Y | MemberId  |
+| MemberId | INT | Y | MemberId  |
 | HashData | STRING | Y | hashcode OTP yg mau di konfirmasi |
 
 
@@ -138,7 +138,7 @@ $.ajax({
 #### - Output:
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
-| Result | INT| Y | 0 = OK ;Engine kirim email OTP |
+| Result | INT| Y | 0 = OK  |
 |||| -1=Not-OK |
 | Message | STRING | Y | Jika ada pesan error |
 
@@ -153,7 +153,7 @@ $.ajax({
     type : "POST",
     data: 
     {
-        "memberid":"15"
+        "memberid": 15,
         "hashcode":"ABCDEWFGH1234567890"
     }
     contentType: "application/json; charset=utf-8",
@@ -173,58 +173,8 @@ $.ajax({
 ```
 #
 
-### 4. /ChangeID 
-#### - Permintaan ganti userid oleh Member (hanya berlaku jika field userid2 = null)
-- Sender : **PHP**
-- Target : **Engine**
 
-
-#### - Parameter:
-| Params | Data Type | Mandatory | Description |
-|--|--|--|--|
-| MemberId | STRING | Y | MemberId |
-| HashData | STRING | Y | hashcode OTP yg mau di konfirmasi |
-
-
-#### - Output:
-| Param | Data Type | Mandatory | Description |
-|--|--|--|--|
-| Result | INT| Y | 0 = OK; Engine kirim email OTP |
-|||| -1=Not-OK |
-| Message | STRING | Y | Jika ada pesan error |
-
-#
-
-##### - Sample call:
-###### JQuery Ajax Call 
-```sh
-$.ajax({
-    url: "http://api.moringaku.com/internal/ChangeID",
-    dataType: "json",
-    type : "POST",
-    data: 
-    {
-       "memberid":"21"
-       "hashcode":"ABCDEFGH1234567890"
-    }
-    contentType: "application/json; charset=utf-8",
-    success : function(response) {
-      console.log(response);
-    }
-  });
-```
-
-##### Sample response:
-###### Success Response
-```sh
-{
-    "result": -2,
-    "message": "already changed before",
-}
-```
-#
-
-### 5. /ChangeProfile
+### 4. /ChangeProfile
 #### - Permintaan ganti Profile oleh Member
 - Sender : **PHP**
 - Target : **Engine**
@@ -240,7 +190,7 @@ $.ajax({
 #### - Output:
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
-| Result | INT| Y | 0 = OK; engine akan kirim email OTP|
+| Result | INT| Y | 0 = OK|
 |||| -1 = NOT-OK |
 | Message | STRING | Y | Jika ada pesan error |
 
@@ -275,7 +225,7 @@ $.ajax({
 ```
 #
 
-### 6. /ChangeWarisan
+### 5. /ChangeWarisan
 #### - Permintaan ganti Data Warisan oleh Member
 - Sender : **PHP**
 - Target : **Engine**
@@ -292,7 +242,7 @@ $.ajax({
 #### - Output:
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
-| Result | INT| Y | 0 = OK ; engine akan kirim email OTP|
+| Result | INT| Y | 0 = OK |
 |||| -1 = NOT-OK |
 | Message | STRING | Y | Jika ada pesan error |
 
@@ -328,7 +278,7 @@ $.ajax({
 #
 
 
-### 7. /ChangeIdPwd
+### 6. /ChangeIdPwd
 #### - Change ID & Pwd Member saat aktivasi
 - Sender : **PHP**
 - Target : **Engine**
@@ -382,7 +332,7 @@ $.ajax({
 #
 
 
-### 9. /CheckID 
+### 7. /CheckID 
 #### - Check userid sudah terpakai / belum. 
 #### Untuk ganti userid saat aktivasi awal
 - Sender : **PHP**
