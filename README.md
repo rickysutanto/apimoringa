@@ -121,7 +121,7 @@ $.ajax({
 ```
 #
 
-### 3. /ChangePwd 
+### 3. /UpdateData 
 #### - Permintaan ganti Password oleh Member
 - Sender : **PHP**
 - Target : **Engine**
@@ -174,111 +174,8 @@ $.ajax({
 #
 
 
-### 4. /ChangeProfile
-#### - Permintaan ganti Profile oleh Member
-- Sender : **PHP**
-- Target : **Engine**
 
-
-#### - Parameter:
-| Params | Data Type | Mandatory | Description |
-|--|--|--|--|
-| MemberId | STRING | Y | MemberId |
-| HashData | STRING | Y | hashcode OTP yg mau di konfirmasi |
-
-
-#### - Output:
-| Param | Data Type | Mandatory | Description |
-|--|--|--|--|
-| Result | INT| Y | 0 = OK|
-|||| -1 = NOT-OK |
-| Message | STRING | Y | Jika ada pesan error |
-
-#
-
-##### - Sample call:
-###### JQuery Ajax Call 
-```sh
-$.ajax({
-    url: "http://api.moringaku.com/internal/ChangeProfile",
-    dataType: "json",
-    type : "POST",
-    data: 
-    {
-        "memberid" : 12,
-        "hashdata" : "ABCDEFGH1234567890"
-    }
-    contentType: "application/json; charset=utf-8",
-    success : function(response) {
-      console.log(response);
-    }
-  });
-```
-
-##### Sample response:
-###### Success Response
-```sh
-{
-    "result": 0,
-    "message": "success",
-}
-```
-#
-
-### 5. /ChangeWarisan
-#### - Permintaan ganti Data Warisan oleh Member
-- Sender : **PHP**
-- Target : **Engine**
-
-
-#### - Parameter:
-| Params | Data Type | Mandatory | Description |
-|--|--|--|--|
-| MemberId | STRING | Y | MemberId |
-| HashData | STRING | Y | hashcode OTP yg mau di konfirmasi 
-
-
-
-#### - Output:
-| Param | Data Type | Mandatory | Description |
-|--|--|--|--|
-| Result | INT| Y | 0 = OK |
-|||| -1 = NOT-OK |
-| Message | STRING | Y | Jika ada pesan error |
-
-#
-
-##### - Sample call:
-###### JQuery Ajax Call 
-```sh
-$.ajax({
-    url: "http://api.moringaku.com/internal/ChangeWarisan",
-    dataType: "json",
-    type : "POST",
-    data: 
-    {
-        "memberid" : 12,
-        "hashdata" : "ABCDEFGH1234567890"
-    }
-    contentType: "application/json; charset=utf-8",
-    success : function(response) {
-      console.log(response);
-    }
-  });
-```
-
-##### Sample response:
-###### Success Response
-```sh
-{
-    "result": 0,
-    "message": "success",
-}
-```
-#
-
-
-### 6. /ChangeIdPwd
+### 4. /ChangeIdPwd
 #### - Change ID & Pwd Member saat aktivasi
 - Sender : **PHP**
 - Target : **Engine**
@@ -332,7 +229,7 @@ $.ajax({
 #
 
 
-### 7. /CheckID 
+### 5. /CheckID 
 #### - Check userid sudah terpakai / belum. 
 #### Untuk ganti userid saat aktivasi awal
 - Sender : **PHP**
