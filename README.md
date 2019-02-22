@@ -43,6 +43,8 @@ $.ajax({
         "jenisotp":1,
         "data":
         {
+            "url" : "https://moringaku.id/tools/password?code=ABCDEFGH"
+            
         }
     }
     contentType: "application/json; charset=utf-8",
