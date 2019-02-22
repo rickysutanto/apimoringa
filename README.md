@@ -44,7 +44,7 @@ $.ajax({
         "jenisotp":1,
         "data":
         {
-            "url" : "https://moringaku.id/tools/password?code=ABCDEFGH"
+            "nexturl" : "https://moringaku.id/tools/password?code=ABCDEFGH"
             
         }
     }
@@ -128,7 +128,7 @@ $.ajax({
 #
 
 ### 3. /UpdateData 
-#### - Permintaan ganti Password oleh Member
+#### - Update data temporary yang disimpan waktu CreateOTP
 - Sender : **PHP**
 - Target : **Engine**
 
@@ -237,7 +237,7 @@ $.ajax({
 
 ### 5. /CheckID 
 #### - Check userid sudah terpakai / belum. 
-#### Untuk ganti userid saat aktivasi awal
+#### Untuk Check userid saat pilih userid di page aktivasi 
 - Sender : **PHP**
 - Target : **Engine**
 
@@ -287,8 +287,8 @@ $.ajax({
 
 
 ### 6. /UpdateBeneficiary
-#### - Check userid sudah terpakai / belum. 
-#### Untuk ganti userid saat aktivasi awal
+#### - update data warisan 
+#### Untuk ganti warisan saat aktivasi awal
 - Sender : **PHP**
 - Target : **Engine**
 
