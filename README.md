@@ -130,7 +130,7 @@ $.ajax({
 #### - Parameter:
 | Params | Data Type | Mandatory | Description |
 |--|--|--|--|
-| MemberId | STRING | Y | MemberId = TrxId |
+| MemberId | STRING | Y | MemberId  |
 | HashData | STRING | Y | hashcode OTP yg mau di konfirmasi |
 
 
@@ -153,7 +153,7 @@ $.ajax({
     type : "POST",
     data: 
     {
-        "memberid":"15012001012"
+        "memberid":"15"
         "hashcode":"ABCDEWFGH1234567890"
     }
     contentType: "application/json; charset=utf-8",
@@ -182,7 +182,7 @@ $.ajax({
 #### - Parameter:
 | Params | Data Type | Mandatory | Description |
 |--|--|--|--|
-| MemberId | STRING | Y | MemberId = TrxId |
+| MemberId | STRING | Y | MemberId |
 | HashData | STRING | Y | hashcode OTP yg mau di konfirmasi |
 
 
@@ -204,7 +204,7 @@ $.ajax({
     type : "POST",
     data: 
     {
-       "memberid":"15012001012"
+       "memberid":"21"
        "hashcode":"ABCDEFGH1234567890"
     }
     contentType: "application/json; charset=utf-8",
@@ -224,7 +224,7 @@ $.ajax({
 ```
 #
 
-### 4. /ChangeProfile
+### 5. /ChangeProfile
 #### - Permintaan ganti Profile oleh Member
 - Sender : **PHP**
 - Target : **Engine**
@@ -233,21 +233,8 @@ $.ajax({
 #### - Parameter:
 | Params | Data Type | Mandatory | Description |
 |--|--|--|--|
-| MemberId | STRING | Y | MemberId = TrxId |
-| NoNPWP| STRING | N | Nomor NPWP |
-| NamaNPWP | STRING | N | Nama Wajib Pajak |
-| AddNPWP | STRING | N | Alamat Wajib Pajak |
-| AcctNo | STRING | N | Nomor Rekening |
-| AcctName | STRING | N | Nama Pemilik Rekening |
-| BankName | STRING | N | Nama Bank |
-| BankBranch | STRING | N | Cabang Bank |
-| Email | STRING | Y | Email nasabah |
-| Phone | STRING | N | Telepon nasabah |
-| whatsapp | STRING | N | Whatsapp nasabah |
-| HideEmail | INT | N| 0 = no; 1 = yes |
-| HidePhone | INT | N| 0 = no; 1 = yes |
-| HideWa | INT | N| 0 = no; 1 = yes |
-
+| MemberId | STRING | Y | MemberId |
+| HashData | STRING | Y | hashcode OTP yg mau di konfirmasi |
 
 
 #### - Output:
@@ -265,8 +252,12 @@ $.ajax({
 $.ajax({
     url: "http://api.moringaku.com/internal/ChangeProfile",
     dataType: "json",
-    type : "GET",
-    data: "memberid=15012001012&nonpwp=8100020102910&namapwp=iksan&addnpwp=alam sutera&acctno=3220102910&acctname=iksan harianto&bankname=bca&bankbranch=tebet&emai=iksan@email.com&phone=081299912&whatsapp=0812999912&hideemail=1&hidephone=1&hidewa=1",
+    type : "POST",
+    data: 
+    {
+        "memberid" : 12,
+        "hashdata" : "ABCDEFGH1234567890"
+    }
     contentType: "application/json; charset=utf-8",
     success : function(response) {
       console.log(response);
@@ -284,7 +275,7 @@ $.ajax({
 ```
 #
 
-### 5. /ChangeWarisan
+### 6. /ChangeWarisan
 #### - Permintaan ganti Data Warisan oleh Member
 - Sender : **PHP**
 - Target : **Engine**
@@ -293,14 +284,8 @@ $.ajax({
 #### - Parameter:
 | Params | Data Type | Mandatory | Description |
 |--|--|--|--|
-| MemberId | STRING | Y | MemberId = TrxId |
-| BeneficiaryName| STRING | N | Nama Ahli Waris |
-| BeneficiaryKtp | STRING | N | Ktp Ahli Waris|
-| BeneficiaryDOB | DATE | N | Tgl lahir ahli waris |
-| BeneficiaryEmail | STRING | N | Emai hli Waris |
-| BeneficiaryGender | INT | N | Gender ahli waris |
-| BeneficiaryPhone | STRING | N | Phone ahli waris |
-| BeneficiaryRelation | STRING | N | Hubungan Ahli waris|
+| MemberId | STRING | Y | MemberId |
+| HashData | STRING | Y | hashcode OTP yg mau di konfirmasi 
 
 
 
@@ -319,8 +304,12 @@ $.ajax({
 $.ajax({
     url: "http://api.moringaku.com/internal/ChangeWarisan",
     dataType: "json",
-    type : "GET",
-    data: "memberid=15012001012&beneficiaryname=iksan&beneficiaryktp=3220102910&beneficiarydob=12031971&beneficiaryemail=iksan@email.com&beneficiarygender=0&beneficiaryphone=0812999912&beneficiaryrelation=istri",
+    type : "POST",
+    data: 
+    {
+        "memberid" : 12,
+        "hashdata" : "ABCDEFGH1234567890"
+    }
     contentType: "application/json; charset=utf-8",
     success : function(response) {
       console.log(response);
@@ -339,7 +328,7 @@ $.ajax({
 #
 
 
-### 6. /ChangeIdPwd
+### 7. /ChangeIdPwd
 #### - Change ID & Pwd Member saat aktivasi
 - Sender : **PHP**
 - Target : **Engine**
@@ -368,8 +357,13 @@ $.ajax({
 $.ajax({
     url: "http://api.moringaku.com/internal/ChangeIdPwd",
     dataType: "json",
-    type : "GET",
-    data: "memberid=15012001012&userid=iksan0201&pwd=3220102910",
+    type : "POST",
+    data: 
+    {
+        "memberid" : 15,
+        "userid" :  "iksan0201"
+        "pwd" : "3220102910",
+    }
     contentType: "application/json; charset=utf-8",
     success : function(response) {
       console.log(response);
@@ -387,54 +381,8 @@ $.ajax({
 ```
 #
 
-### 7. /ChangedConfirm 
-#### - Konfirmasi perubahan setelah menerima OTP. 
-#### Untuk ganti password, ganti profile, & ganti warisan
-- Sender : **PHP**
-- Target : **Engine**
 
-
-#### - Parameter:
-| Params | Data Type | Mandatory | Description |
-|--|--|--|--|
-| HashData | STRING | Y | data hash yg dikirim ke email nasabah |
-
-
-#### - Output:
-| Param | Data Type | Mandatory | Description |
-|--|--|--|--|
-| Result | INT| Y | 0 = Sukses; engine confirm perubahan |
-|||| -1 = Gagal |
-| Message | STRING | Y | Jika ada pesan error |
-
-#
-
-##### - Sample call:
-###### JQuery Ajax Call 
-```sh
-$.ajax({
-    url: "http://api.moringaku.com/internal/ChangedConfirm",
-    dataType: "json",
-    type : "GET",
-    data: "hashdata=5D89006A21776A45E050A8C04E0A33D8",
-    contentType: "application/json; charset=utf-8",
-    success : function(response) {
-      console.log(response);
-    }
-  });
-```
-
-##### Sample response:
-###### Success Response
-```sh
-{
-    "result": 0,
-    "message": "success",
-}
-```
-#
-
-### 8. /CheckID 
+### 9. /CheckID 
 #### - Check userid sudah terpakai / belum. 
 #### Untuk ganti userid saat aktivasi awal
 - Sender : **PHP**
@@ -462,8 +410,11 @@ $.ajax({
 $.ajax({
     url: "http://api.moringaku.com/internal/CheckID",
     dataType: "json",
-    type : "GET",
-    data: "userid=kodokbuduk",
+    type : "POST",
+    data: 
+    {
+        "userid":"kodokbuduk"
+    }
     contentType: "application/json; charset=utf-8",
     success : function(response) {
       console.log(response);
