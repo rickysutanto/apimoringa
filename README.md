@@ -9,7 +9,59 @@
 ### URL untuk OTP yang di konfirmasi member : https://moringaku.id/tools/otp?code={hash}
 #
 
-### 1. /CheckOTP 
+### 1. /CreateOTP 
+#### - Buat OTP baru untuk dikirim ke member
+- Sender : **PHP**
+- Target : **Engine**
+
+#### - Parameter:
+| Params | Data Type | Mandatory | Description |
+|--|--|--|--|
+| MemberId | STRING | Y | member id |
+| JenisOTP | INT | Y | Jenis OTP |
+|||| 1 = Change Password |
+|||| 2 = Change Profile |
+|||| 3 = Change Warisan |
+| data | JSON | N | Data temporary |
+
+#### - Output:
+| Param | Data Type | Mandatory | Description |
+|--|--|--|--|
+| Result | INT| Y | 0 = OK; -1 = Error |
+
+#
+##### - Sample call:
+###### JQuery Ajax Call 
+```sh
+$.ajax({
+    url: "http://api.moringaku.com/internal/CreateOTP",
+    dataType: "json",
+    type : "POST",
+    data: 
+    {
+        "memberid":"123456".
+        "jenisotp":1,
+        "data":
+        {
+        }
+    }
+    contentType: "application/json; charset=utf-8",
+    success : function(response) {
+      console.log(response);
+    }
+  });
+```
+
+##### Sample response:
+###### Success Response
+```sh
+{
+    "result": 0,
+}
+```
+#
+
+### 2. /CheckOTP 
 #### - Check OTP apakah masih valid
 - Sender : **PHP**
 - Target : **Engine**
@@ -24,7 +76,8 @@
 #### - Output:
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
-| Expired | INT| Y | 0 = Active; 1 = Expired |
+| Result | INT | Y | 0 = OK; -1 = Error |
+| Expired | INT| Y | 0 = Active; -1 = Expired |
 | MemberId | STRING | Y | member id (trxid) |
 | UserName | STRING | Y | nama member |
 | JenisOTP | INT | Y | 1 = Aktivasi Akun |
@@ -32,6 +85,7 @@
 |||| 3 = Change Profile |
 |||| 4 = Change Warisan |
 |||| 5 = Change user id |
+| data | JSON | N | data temporary jika ada | 
 #
 
 ##### - Sample call:
@@ -56,6 +110,7 @@ $.ajax({
 ###### Success Response
 ```sh
 {
+    "result": 0,
     "expired": 0,
     "memberid": "15012001012",
     "username": "Ahmad fikri",
@@ -64,7 +119,7 @@ $.ajax({
 ```
 #
 
-### 2. /ChangePwd 
+### 3. /ChangePwd 
 #### - Permintaan ganti Password oleh Member
 - Sender : **PHP**
 - Target : **Engine**
@@ -74,6 +129,7 @@ $.ajax({
 | Params | Data Type | Mandatory | Description |
 |--|--|--|--|
 | MemberId | STRING | Y | MemberId = TrxId |
+| HashData | STRING | Y | hashcode OTP yg mau di konfirmasi |
 
 
 
@@ -96,6 +152,7 @@ $.ajax({
     data: 
     {
         "memberid":"15012001012"
+        "hashcode":"ABCDEWFGH1234567890"
     }
     contentType: "application/json; charset=utf-8",
     success : function(response) {
@@ -114,7 +171,7 @@ $.ajax({
 ```
 #
 
-### 3. /ChangeID 
+### 4. /ChangeID 
 #### - Permintaan ganti userid oleh Member (hanya berlaku jika field userid2 = null)
 - Sender : **PHP**
 - Target : **Engine**
@@ -124,6 +181,7 @@ $.ajax({
 | Params | Data Type | Mandatory | Description |
 |--|--|--|--|
 | MemberId | STRING | Y | MemberId = TrxId |
+| HashData | STRING | Y | hashcode OTP yg mau di konfirmasi |
 
 
 #### - Output:
@@ -145,6 +203,7 @@ $.ajax({
     data: 
     {
        "memberid":"15012001012"
+       "hashcode":"ABCDEFGH1234567890"
     }
     contentType: "application/json; charset=utf-8",
     success : function(response) {
