@@ -191,7 +191,7 @@ $.ajax({
 | Params | Data Type | Mandatory | Description |
 |--|--|--|--|
 | MemberId | INT | Y | MemberId |
-| User ID | STRING | Y | New User ID |
+| User ID | STRING | N | New User ID , tidak diisi jika ganti password saja/reset pwd|
 | Pwd | STRING | Y | New Password |
 
 
