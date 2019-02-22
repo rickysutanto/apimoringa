@@ -190,7 +190,7 @@ $.ajax({
 #### - Parameter:
 | Params | Data Type | Mandatory | Description |
 |--|--|--|--|
-| MemberId | STRING | Y | MemberId = TrxId |
+| MemberId | INT | Y | MemberId |
 | User ID | STRING | Y | New User ID |
 | Pwd | STRING | Y | New Password |
 
