@@ -3,6 +3,7 @@
 ![](https://img.shields.io/github/release/pandao/editor.md.svg)
 
 ## URL-URL untuk email OTP
+### URL Cek pembayaran saat aktivasi : https://moringaku.id/tools/aktivasi?code={hash}
 ### URL Aktivasi akun : https://moringaku.id/tools/aktivasi?code={hash}
 ### URL Update Warisan : https://moringaku.id/tools/warisan?code={hash}
 ### URL Ganti password : https://moringaku.id/tools/password?code={hash}
