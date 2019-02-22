@@ -29,6 +29,7 @@
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
 | Result | INT| Y | 0 = OK; -1 = Error |
+| Message| STRING | N | error message |
 
 #
 ##### - Sample call:
@@ -60,6 +61,7 @@ $.ajax({
 ```sh
 {
     "result": 0,
+    "message": ""
 }
 ```
 #
@@ -90,6 +92,8 @@ $.ajax({
 |||| 5 = Change user id |
 |||| 6 = proses pembayaran setelah dapat welcome email |
 | data | JSON | N | data temporary jika ada | 
+| Message| STRING | N | error message |
+
 #
 
 ##### - Sample call:
@@ -124,6 +128,7 @@ $.ajax({
         "nexturl" : "",
         
     }
+    "message" : ""
 }
 ```
 ###### Success Response Proses pembayaran JenisOTP 6
