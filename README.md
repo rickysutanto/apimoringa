@@ -321,7 +321,7 @@ $.ajax({
 | memberid | INT | Y | member id |
 | benname | STRING | Y | nama ahli waris | 
 | benktp | STRING | Y | KTP |
-| bendob | STRING | Y | DOB yyyymmdd |
+| bendob | STRING | Y | DOB dd/mm/yyyy |
 | bengender | INT | Y | 0 = pria; 1 = wanita | 
 | benemail | STRING | Y | email |
 | benphone | STRING | N | phone |
@@ -350,7 +350,7 @@ $.ajax({
         "memberid": 21,
         "benname" : "ahmad zakhri",
         "benktp" : "1234567890",
-        "bendob" " "19720811",
+        "bendob" " "19/02/2019",
         "bengender" : 0,
         "benemail" : "ahmad@email.com",
         "benphone" : "0819929919091",
