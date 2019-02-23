@@ -213,7 +213,7 @@ $.ajax({
 | Params | Data Type | Mandatory | Description |
 |--|--|--|--|
 | MemberId | INT | Y | MemberId |
-| User ID | STRING | N | New User ID , tidak diisi jika ganti password saja/reset pwd|
+| UserId | STRING | N | New User ID , tidak diisi jika ganti password saja/reset pwd|
 | Pwd | STRING | Y | New Password |
 
 
