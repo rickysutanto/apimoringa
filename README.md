@@ -325,7 +325,7 @@ $.ajax({
 | bengender | INT | Y | 0 = pria; 1 = wanita | 
 | benemail | STRING | Y | email |
 | benphone | STRING | N | phone |
-| benrelation | STRING | N | 0 = Suami; 1 = Istri; 2 = Anak; 3 = kakak; 4 = adik |
+| benrelation | INT | N | 0 = Suami; 1 = Istri; 2 = Anak; 3 = kakak; 4 = adik |
 
 
 
