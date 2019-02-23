@@ -176,7 +176,7 @@ $.ajax({
 ###### JQuery Ajax Call 
 ```sh
 $.ajax({
-    url: "http://api.moringaku.com/internal/ChangePwd",
+    url: "http://api.moringaku.com/internal/UpdateData",
     dataType: "json",
     type : "POST",
     data: 
@@ -342,7 +342,7 @@ $.ajax({
 ###### JQuery Ajax Call 
 ```sh
 $.ajax({
-    url: "http://api.moringaku.com/internal/CheckID",
+    url: "http://api.moringaku.com/internal/UpdateBeneficiary",
     dataType: "json",
     type : "POST",
     data: 
