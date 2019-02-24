@@ -25,6 +25,29 @@
 |||| 2 = Change Profile |
 |||| 3 = Change Warisan |
 | data | JSON | N | Data temporary |
+|||| "nexturl"       : url tujuan untuk dikirim ke email |
+|||| ----- Jenis OTP = 2 ----- |
+|||| "nomornpwp"     : no npwp |
+|||| "namawpajak"    : nama npwp |
+|||| "alamatwpajak"  : alamat npwp|
+|||| "nomorac"       : AC nomor |
+|||| "namaac"        : AC Nama |
+|||| "namabank"      : Nama Bank |
+|||| "cabangBank"    : Cabang bank |
+|||| "email"         : email |
+|||| "hideemail"     : hide email 0 = No, 1 = Yes |
+|||| "telepon"       : Telepon |
+|||| "hidephone"     : hide phone 0 = No, 1 = Yes |
+|||| "whatsapp"      : Whatsapp No |
+|||| "hidewa"        : hide Whatsapp 0 = No, 1 = Yes|
+|||| ----- Jenis OTP 3 ----- |
+|||| "benname"       : nama ahli waris |
+|||| "benktp"        : ktp ahli wris |
+|||| "bendob"        : tgl lahir ahli waris |
+|||| "bengender"     : gender 0 = Pria , 1 = wanita |
+|||| "benemail"      : email ahli waris |
+|||| "benphone"      : telp ahli waris |
+|||| "benrelation"   : hubungan 0 = suami, 1 = istri, 2 = anak, 3 = kakak, 4 = adik |
 
 #### - Output:
 | Param | Data Type | Mandatory | Description |
@@ -42,7 +65,7 @@
         "jenisotp":1,
         "data":
         {
-            "nexturl" : "https://moringaku.id/tools/password?code=ABCDEFGH"
+            "nexturl" : "https://moringaku.id/tools/password?code="
             
         }
     }
@@ -59,20 +82,20 @@
         "jenisotp":2,
         "data":
         {
-            "nexturl" : "https://moringaku.id/tools/profile?code=ABCDEFGH",
-            "nomornpwp": "711501718439000",
-            "namawpajak": "pian", 
-            "alamatwpajak" : "Jl. cagak",
-            "nomorac": "8330059568",
-            "namaac" : "Rini Purnamasari",
-            "namabank" : "BCA2",
-            "cabangBank" : "Jakarta",
-            "email" : "storialika@gmail.com",
-            "hideemail" : 1,
-            "telepon" : "083804649937",
-            "hidephone" : 1,
-            "whatsapp" : "083804649937",
-            "hidewa" : 1            
+            "nexturl"       : "https://moringaku.id/tools/profile?code=",
+            "nomornpwp"     : "711501718439000",
+            "namawpajak"    : "pian", 
+            "alamatwpajak"  : "Jl. cagak",
+            "nomorac"       : "8330059568",
+            "namaac"        : "Rini Purnamasari",
+            "namabank"      : "BCA2",
+            "cabangBank"    : "Jakarta",
+            "email"         : "storialika@gmail.com",
+            "hideemail"     : 1,
+            "telepon"       : "083804649937",
+            "hidephone"     : 1,
+            "whatsapp"      : "083804649937",
+            "hidewa"        : 1            
         }
     }
     
@@ -84,23 +107,17 @@
     data: 
     {
         "memberid": 12.
-        "jenisotp":2,
+        "jenisotp":3,
         "data":
         {
-            "nexturl" : "https://moringaku.id/tools/profile?code=ABCDEFGH",
-            "nomornpwp": "711501718439000",
-            "namawpajak": "pian", 
-            "alamatwpajak" : "Jl. cagak",
-            "nomorac": "8330059568",
-            "namaac" : "Rini Purnamasari",
-            "namabank" : "BCA2",
-            "cabangBank" : "Jakarta",
-            "email" : "storialika@gmail.com",
-            "hideemail" : 1,
-            "telepon" : "083804649937",
-            "hidephone" : 1,
-            "whatsapp" : "083804649937",
-            "hidewa" : 1            
+            "nexturl"   : "https://moringaku.id/tools/profile?code=",
+            "benname"   : "Surya atmadja",
+            "benktp"    : "3891000001212",
+            "bendob"    : "22/03/1988",
+            "bengender" : 0,
+            "benemail"  : "surya@email.com",
+            "benphone"  : "0819910000",
+            "benrelation": 3
         }
     }
     
