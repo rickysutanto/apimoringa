@@ -62,7 +62,35 @@
             "nexturl" : "https://moringaku.id/tools/profile?code=ABCDEFGH",
             "nomornpwp": "711501718439000",
             "namawpajak": "pian", 
-            "alamatwpajak" : "Sopian",
+            "alamatwpajak" : "Jl. cagak",
+            "nomorac": "8330059568",
+            "namaac" : "Rini Purnamasari",
+            "namabank" : "BCA2",
+            "cabangBank" : "Jakarta",
+            "email" : "storialika@gmail.com",
+            "hideemail" : 1,
+            "telepon" : "083804649937",
+            "hidephone" : 1,
+            "whatsapp" : "083804649937",
+            "hidewa" : 1            
+        }
+    }
+    
+```
+#
+##### - Sample call:
+###### Change warisan 
+```sh
+    data: 
+    {
+        "memberid": 12.
+        "jenisotp":2,
+        "data":
+        {
+            "nexturl" : "https://moringaku.id/tools/profile?code=ABCDEFGH",
+            "nomornpwp": "711501718439000",
+            "namawpajak": "pian", 
+            "alamatwpajak" : "Jl. cagak",
             "nomorac": "8330059568",
             "namaac" : "Rini Purnamasari",
             "namabank" : "BCA2",
