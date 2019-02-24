@@ -1,18 +1,16 @@
 # API Moringa - Front End Functions
 
-![](https://img.shields.io/github/release/pandao/editor.md.svg)
-
 ## URL-URL untuk email OTP
 ### URL untuk email member pending (welcome email) : https://moringaku.id/tools/aktivasi?code={hash}
 ### URL untuk email aktivasi akun (member active) : https://moringaku.id/tools/aktivasi?code={hash}
-
-### Jenis OTP 1 : URL Ganti password : https://moringaku.id/tools/password?code={hash}
-### Jenis OTP 2 : URL Ganti profile  : https://moringaku.id/tools/profile?code={hash}
-### Jenis OTP 3 : URL Update Warisan : https://moringaku.id/tools/warisan?code={hash}
 #
 
 ### 1. /CreateOTP 
 #### - Buat OTP baru untuk dikirim ke member
+#### Jenis OTP 1 : URL Ganti password : https://moringaku.id/tools/password?code={hash}
+#### Jenis OTP 2 : URL Ganti profile  : https://moringaku.id/tools/profile?code={hash}
+#### Jenis OTP 3 : URL Update Warisan : https://moringaku.id/tools/warisan?code={hash}
+#
 - Sender : **PHP**
 - Target : **Engine**
 
