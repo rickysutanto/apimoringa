@@ -19,9 +19,9 @@
 |--|--|--|--|
 | MemberId | INT | Y | member id = id di table members |
 | JenisOTP | INT | Y | Jenis OTP |
-|||| 1 = Change Password |
-|||| 2 = Change Profile |
-|||| 3 = Change Warisan |
+|||| 1 = Ganti Password |
+|||| 2 = Ganti Profile |
+|||| 3 = Gsnti Warisan |
 | data | JSON | N | Data temporary |
 |||| "nexturl"       : url tujuan untuk dikirim ke email |
 |||| ----- Jenis OTP = 2 ----- |
