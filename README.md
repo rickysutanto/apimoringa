@@ -28,7 +28,7 @@
 #### - Output:
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
-| Result | INT| Y | 0 = OK; -1 = Error |
+| Result | INT| Y | 0 = OK; 1 = Error |
 | Message| STRING | N | error message |
 
 #
@@ -75,14 +75,14 @@ $.ajax({
 #### - Parameter:
 | Params | Data Type | Mandatory | Description |
 |--|--|--|--|
-| HashData | STRING | Y | data hash yg dikirim ke email nasabah |
+| HashCode | STRING | Y | data hash yg dikirim ke email nasabah |
 
 
 #### - Output:
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
-| Result | INT | Y | 0 = OK; -1 = Error |
-| Expired | INT| Y | 0 = Active; -1 = Expired |
+| Result | INT | Y | 0 = OK; 1 = Error |
+| Expired | INT| Y | 0 = Active; 1 = Expired |
 | MemberId | INT | Y | member id (trxid) |
 | UserName | STRING | Y | nama member |
 | JenisOTP | INT | Y | 1 = Aktivasi Akun |
@@ -105,7 +105,7 @@ $.ajax({
     type : "POST",
     data: 
     {
-        "hashdata":"5D89006A21776A45E050A8C04E0A33D8"
+        "hashcode":"5D89006A21776A45E050A8C04E0A33D8"
     }
     contentType: "application/json; charset=utf-8",
     success : function(response) {
@@ -159,7 +159,7 @@ $.ajax({
 | Params | Data Type | Mandatory | Description |
 |--|--|--|--|
 | MemberId | INT | Y | MemberId  |
-| HashData | STRING | Y | hashcode OTP yg mau di konfirmasi |
+| HashCode | STRING | Y | hashcode OTP yg mau di konfirmasi |
 
 
 
@@ -167,7 +167,7 @@ $.ajax({
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
 | Result | INT| Y | 0 = OK  |
-|||| -1=Not-OK |
+|||| 1=Not-OK |
 | Message | STRING | Y | Jika ada pesan error |
 
 #
@@ -221,7 +221,7 @@ $.ajax({
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
 | Result | INT| Y | 0 = OK; engine update database |
-|||| -1 = NOT-OK |
+|||| 1 = NOT-OK |
 | Message | STRING | Y | Jika ada pesan error |
 
 #
@@ -274,7 +274,7 @@ $.ajax({
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
 | Result | INT| Y | 0 = tidak terpakai |
-|||| -1 = sudah terpakai / error |
+|||| 1 = sudah terpakai / error |
 | Message | STRING | Y | Jika ada pesan error |
 
 #
@@ -301,7 +301,7 @@ $.ajax({
 ###### Success Response
 ```sh
 {
-    "result": -1,
+    "result": 1,
     "message": "already used",
 }
 ```
@@ -333,7 +333,7 @@ $.ajax({
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
 | Result | INT| Y | 0 = tidak terpakai |
-|||| -1 = sudah terpakai / error |
+|||| 1 =  error |
 | Message | STRING | Y | Jika ada pesan error |
 
 #
@@ -368,7 +368,7 @@ $.ajax({
 ###### Success Response
 ```sh
 {
-    "result": -1,
+    "result": 1,
     "message": "error",
 }
 ```
