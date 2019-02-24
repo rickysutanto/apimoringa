@@ -318,7 +318,7 @@
 #### - Output:
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
-| Result | INT| Y | 0 = tidak terpakai |
+| Result | INT| Y | 0 = OK, tidak terpakai |
 |||| 1 = sudah terpakai / error |
 | Message | STRING | Y | Jika ada pesan error |
 
@@ -370,7 +370,7 @@
 #### - Output:
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
-| Result | INT| Y | 0 = tidak terpakai |
+| Result | INT| Y | 0 = ok |
 |||| 1 =  error |
 | Message | STRING | Y | Jika ada pesan error |
 
