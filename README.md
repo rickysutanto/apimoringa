@@ -3,11 +3,12 @@
 ![](https://img.shields.io/github/release/pandao/editor.md.svg)
 
 ## URL-URL untuk email OTP
-### URL Cek pembayaran saat aktivasi : https://moringaku.id/tools/aktivasi?code={hash}
-### URL Aktivasi akun : https://moringaku.id/tools/aktivasi?code={hash}
-### URL Update Warisan : https://moringaku.id/tools/warisan?code={hash}
-### URL Ganti password : https://moringaku.id/tools/password?code={hash}
-### URL Ganti profile  : https://moringaku.id/tools/profile?code={hash}
+### URL untuk email member pending (welcome email) : https://moringaku.id/tools/aktivasi?code={hash}
+### URL untuk email aktivasi akun (member active) : https://moringaku.id/tools/aktivasi?code={hash}
+
+### Jenis OTP 1 : URL Ganti password : https://moringaku.id/tools/password?code={hash}
+### Jenis OTP 2 : URL Ganti profile  : https://moringaku.id/tools/profile?code={hash}
+### Jenis OTP 3 : URL Update Warisan : https://moringaku.id/tools/warisan?code={hash}
 #
 
 ### 1. /CreateOTP 
