@@ -1,8 +1,8 @@
 # API Moringa - Front End Functions
 
-## URL-URL untuk email OTP
-### URL untuk email member pending (welcome email) : https://moringaku.id/tools/aktivasi?code={hash}
-### URL untuk email aktivasi akun (member active) : https://moringaku.id/tools/aktivasi?code={hash}
+### URL-URL untuk email OTP
+#### URL untuk email member pending (welcome email) : https://moringaku.id/tools/aktivasi?code={hash}
+#### URL untuk email aktivasi akun (member active) : https://moringaku.id/tools/aktivasi?code={hash}
 #
 
 ### 1. /CreateOTP 
