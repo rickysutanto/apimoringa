@@ -128,7 +128,7 @@
 ```sh
 {
     "result": 0,
-    "message": ""
+    "message": "ok"
 }
 ```
 #
@@ -150,7 +150,7 @@
 #### - Output:
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
-| Result | INT | Y | 0 = OK; 1 = Error |
+| Result | INT | Y | 0 = OK; 1 = Not OK |
 | Expired | INT| Y | 0 = Active; 1 = Expired |
 | MemberId | INT | Y | member id (trxid) |
 | UserName | STRING | Y | nama member |
@@ -168,23 +168,16 @@
 ##### - Sample call:
 ###### JQuery Ajax Call 
 ```sh
-$.ajax({
-    url: "http://api.moringaku.com/internal/CheckOTP",
-    dataType: "json",
-    type : "POST",
+
     data: 
     {
         "hashcode":"5D89006A21776A45E050A8C04E0A33D8"
     }
-    contentType: "application/json; charset=utf-8",
-    success : function(response) {
-      console.log(response);
-    }
-  });
+    
 ```
 
 ##### Sample response:
-###### Success Response aktivasi akun JenisOTP 1
+###### Success Response aktivasi akun JenisOTP 1 s/d 5
 ```sh
 {
     "result": 0,
@@ -197,7 +190,7 @@ $.ajax({
         "nexturl" : "",
         
     }
-    "message" : ""
+    "message" : "ok"
 }
 ```
 ###### Success Response Proses pembayaran JenisOTP 6
@@ -235,7 +228,7 @@ $.ajax({
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
 | Result | INT| Y | 0 = OK  |
-|||| 1=Not-OK |
+|||| 1=Not OK |
 | Message | STRING | Y | Jika ada pesan error |
 
 #
@@ -243,20 +236,13 @@ $.ajax({
 ##### - Sample call:
 ###### JQuery Ajax Call 
 ```sh
-$.ajax({
-    url: "http://api.moringaku.com/internal/UpdateData",
-    dataType: "json",
-    type : "POST",
+
     data: 
     {
         "memberid": 15,
         "hashcode":"ABCDEWFGH1234567890"
     }
-    contentType: "application/json; charset=utf-8",
-    success : function(response) {
-      console.log(response);
-    }
-  });
+    
 ```
 
 ##### Sample response:
@@ -264,7 +250,7 @@ $.ajax({
 ```sh
 {
     "result": 0,
-    "message": "success",
+    "message": "ok",
 }
 ```
 #
@@ -272,7 +258,7 @@ $.ajax({
 
 
 ### 4. /ChangeIdPwd
-#### - Change ID & Pwd Member saat aktivasi
+#### - Change ID & Pwd Member saat aktivasi / saat member meminta dari member area dan melalui email link OTP
 - Sender : **PHP**
 - Target : **Engine**
 
@@ -289,7 +275,7 @@ $.ajax({
 | Param | Data Type | Mandatory | Description |
 |--|--|--|--|
 | Result | INT| Y | 0 = OK; engine update database |
-|||| 1 = NOT-OK |
+|||| 1 = NOT OK |
 | Message | STRING | Y | Jika ada pesan error |
 
 #
@@ -297,21 +283,14 @@ $.ajax({
 ##### - Sample call:
 ###### JQuery Ajax Call 
 ```sh
-$.ajax({
-    url: "http://api.moringaku.com/internal/ChangeIdPwd",
-    dataType: "json",
-    type : "POST",
+
     data: 
     {
         "memberid" : 15,
         "userid" :  "iksan0201"
         "pwd" : "3220102910",
     }
-    contentType: "application/json; charset=utf-8",
-    success : function(response) {
-      console.log(response);
-    }
-  });
+    
 ```
 
 ##### Sample response:
@@ -319,7 +298,7 @@ $.ajax({
 ```sh
 {
     "result": 0,
-    "message": "success",
+    "message": "ok",
 }
 ```
 #
@@ -350,19 +329,12 @@ $.ajax({
 ##### - Sample call:
 ###### JQuery Ajax Call 
 ```sh
-$.ajax({
-    url: "http://api.moringaku.com/internal/CheckID",
-    dataType: "json",
-    type : "POST",
+
     data: 
     {
         "userid":"kodokbuduk"
     }
-    contentType: "application/json; charset=utf-8",
-    success : function(response) {
-      console.log(response);
-    }
-  });
+    
 ```
 
 ##### Sample response:
@@ -409,10 +381,7 @@ $.ajax({
 ##### - Sample call:
 ###### JQuery Ajax Call 
 ```sh
-$.ajax({
-    url: "http://api.moringaku.com/internal/UpdateBeneficiary",
-    dataType: "json",
-    type : "POST",
+
     data: 
     {
         "memberid": 21,
@@ -425,11 +394,7 @@ $.ajax({
         "benrelation" : 2
         
     }
-    contentType: "application/json; charset=utf-8",
-    success : function(response) {
-      console.log(response);
-    }
-  });
+    
 ```
 
 ##### Sample response:
