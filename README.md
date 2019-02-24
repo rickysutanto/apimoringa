@@ -33,27 +33,61 @@
 
 #
 ##### - Sample call:
-###### JQuery Ajax Call 
+###### Change Password 
 ```sh
-$.ajax({
-    url: "http://api.moringaku.com/internal/CreateOTP",
-    dataType: "json",
-    type : "POST",
     data: 
     {
         "memberid": 12.
         "jenisotp":1,
         "data":
-        [{
+        {
             "nexturl" : "https://moringaku.id/tools/password?code=ABCDEFGH"
             
-        }]
+        }
     }
-    contentType: "application/json; charset=utf-8",
-    success : function(response) {
-      console.log(response);
+    
+```
+
+#
+##### - Sample call:
+###### Change Profile 
+```sh
+    data: 
+    {
+        "memberid": 12.
+        "jenisotp":2,
+        "data":
+        {
+            "nexturl" : "https://moringaku.id/tools/password?code=ABCDEFGH"
+            Nomor NPWP
+711501718439000
+Nama Wajib Pajak
+Pian 
+Alamat Wajib Pajak
+Sopian
+Upload Foto Kartu NPWP
+(hanya menerima file JPG/JPEG dan PNG, maks 5 MB)
+Nomor Rekening
+8330059568
+Nama Pemilik Rek
+Rini Purnamasari
+Nama Bank
+BCA2
+Cabang Bank
+Jakarta
+Email
+storialika@gmail.com
+ Sembunyikan Email pada web replika.
+Telepon
+083804649937
+ Sembunyikan Telepon pada web replika.
+Whatsapp
+083804649937
+ Sembunyikan Whatsapp pada web replika.
+            
+        }
     }
-  });
+    
 ```
 
 ##### Sample response:
