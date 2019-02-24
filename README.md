@@ -70,6 +70,8 @@ $.ajax({
 #### - Check OTP apakah masih valid
 - Sender : **PHP**
 - Target : **Engine**
+- Note : untuk target URL Heksa  selama UAT menggunakan : "http://103.58.146.64/heksaecommerce/beli/repayment?trxid=153689959640413612&refid=moringaku" 
+        
 
 
 #### - Parameter:
@@ -141,8 +143,7 @@ $.ajax({
     "jenisotp": 6,
     "data" :
     {
-        "nexturl" : "https://heksainsurance.co.id/heksaecommerce/beli/repayment?trxid=153689959640413612&refid=moringaku",
-        "nexturl" : "http://103.58.146.64/heksaecommerce/beli/repayment?trxid=153689959640413612&refid=moringaku" (untuk UAT)
+        "nexturl" : "https://heksainsurance.co.id/heksaecommerce/beli/repayment?trxid=153689959640413612&refid=moringaku"
         
     }
 }
