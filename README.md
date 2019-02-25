@@ -18,10 +18,12 @@
 | Params | Data Type | Mandatory | Description |
 |--|--|--|--|
 | MemberId | INT | Y | member id = id di table members |
-| JenisOTP | INT | Y | Jenis OTP |
-|||| 1 = Ganti Password |
-|||| 2 = Ganti Profile |
-|||| 3 = Gsnti Warisan |
+| JenisOTP | INT | Y | 1 = not used |
+|||| 2 = Change Password |
+|||| 3 = Change Profile |
+|||| 4 = Change Warisan |
+|||| 5 = Change user id |
+|||| 6 = not used |
 | data | JSON | N | Data temporary |
 |||| "nexturl"       : url tujuan untuk dikirim ke email |
 |||| ----- Jenis OTP = 2 ----- |
