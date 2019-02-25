@@ -43,7 +43,7 @@
 |||| ----- Jenis OTP 3 ----- |
 |||| "benname"       : nama ahli waris |
 |||| "benktp"        : ktp ahli wris |
-|||| "bendob"        : tgl lahir ahli waris |
+|||| "bendob"        : tgl lahir ahli waris yyyy-mm-dd |
 |||| "bengender"     : gender 0 = Pria , 1 = wanita |
 |||| "benemail"      : email ahli waris |
 |||| "benphone"      : telp ahli waris |
@@ -113,7 +113,7 @@
             "nexturl"   : "https://moringaku.id/tools/profile?code=",
             "benname"   : "Surya atmadja",
             "benktp"    : "3891000001212",
-            "bendob"    : "22/03/1988",
+            "bendob"    : "1988-03-20",
             "bengender" : 0,
             "benemail"  : "surya@email.com",
             "benphone"  : "0819910000",
@@ -361,7 +361,7 @@
 | memberid | INT | Y | member id |
 | benname | STRING | Y | nama ahli waris | 
 | benktp | STRING | Y | KTP |
-| bendob | STRING | Y | DOB dd/mm/yyyy |
+| bendob | STRING | Y | DOB yyyy-mm-dd |
 | bengender | INT | Y | 0 = pria; 1 = wanita | 
 | benemail | STRING | Y | email |
 | benphone | STRING | N | phone |
@@ -387,7 +387,7 @@
         "memberid": 21,
         "benname" : "ahmad zakhri",
         "benktp" : "1234567890",
-        "bendob" " "19/02/2019",
+        "bendob" " "2019-02-10",
         "bengender" : 0,
         "benemail" : "ahmad@email.com",
         "benphone" : "0819929919091",
