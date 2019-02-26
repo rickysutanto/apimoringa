@@ -7,7 +7,7 @@
 
 ### 1. /CreateOTP 
 #### - Buat OTP baru untuk dikirim ke member
-#### Jenis OTP 2,3, 4 & 5 : URL Ganti profile  : https://moringaku.id/tools/profile?code={hash}
+#### Jenis OTP 2,3, 4 & 5 : URL Ganti data  : https://moringaku.id/tools/profile?code={hash}
 #
 - Sender : **PHP**
 - Target : **Engine**
