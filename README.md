@@ -62,7 +62,7 @@
     data: 
     {
         "memberid": 12.
-        "jenisotp":1,
+        "jenisotp":2,
         "data":
         {
             "nexturl" : "https://moringaku.id/tools/profile?code="
@@ -79,7 +79,7 @@
     data: 
     {
         "memberid": 12.
-        "jenisotp":2,
+        "jenisotp":3,
         "data":
         {
             "nexturl"       : "https://moringaku.id/tools/profile?code=",
@@ -107,7 +107,7 @@
     data: 
     {
         "memberid": 12.
-        "jenisotp":3,
+        "jenisotp":4,
         "data":
         {
             "nexturl"   : "https://moringaku.id/tools/profile?code=",
