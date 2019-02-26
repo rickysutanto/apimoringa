@@ -7,9 +7,7 @@
 
 ### 1. /CreateOTP 
 #### - Buat OTP baru untuk dikirim ke member
-#### Jenis OTP 1 : URL Ganti password : https://moringaku.id/tools/password?code={hash}
-#### Jenis OTP 2 : URL Ganti profile  : https://moringaku.id/tools/profile?code={hash}
-#### Jenis OTP 3 : URL Update Warisan : https://moringaku.id/tools/warisan?code={hash}
+#### Jenis OTP 2,3, 4 & 5 : URL Ganti profile  : https://moringaku.id/tools/profile?code={hash}
 #
 - Sender : **PHP**
 - Target : **Engine**
@@ -26,7 +24,7 @@
 |||| 6 = not used |
 | data | JSON | N | Data temporary |
 |||| "nexturl"       : url tujuan untuk dikirim ke email |
-|||| ----- Jenis OTP = 2 ----- |
+|||| ----- Jenis OTP = 3 ----- |
 |||| "nomornpwp"     : no npwp |
 |||| "namawpajak"    : nama npwp |
 |||| "alamatwpajak"  : alamat npwp|
@@ -40,7 +38,7 @@
 |||| "hidephone"     : hide phone 0 = No, 1 = Yes |
 |||| "whatsapp"      : Whatsapp No |
 |||| "hidewa"        : hide Whatsapp 0 = No, 1 = Yes|
-|||| ----- Jenis OTP 3 ----- |
+|||| ----- Jenis OTP 4 ----- |
 |||| "benname"       : nama ahli waris |
 |||| "benktp"        : ktp ahli wris |
 |||| "bendob"        : tgl lahir ahli waris yyyy-mm-dd |
@@ -48,6 +46,8 @@
 |||| "benemail"      : email ahli waris |
 |||| "benphone"      : telp ahli waris |
 |||| "benrelation"   : hubungan 0 = suami, 1 = istri, 2 = anak, 3 = kakak, 4 = adik |
+|||| ----- Jenis OTP 5 ----- |
+|||| "newuserid"     : user id baru (field database : userid2) |
 
 #### - Output:
 | Param | Data Type | Mandatory | Description |
@@ -122,7 +122,23 @@
     }
     
 ```
-
+#
+##### - Sample call:
+###### Change user id
+```sh
+    data: 
+    {
+        "memberid": 12.
+        "jenisotp":5,
+        "data":
+        {
+            "nexturl"   : "https://moringaku.id/tools/profile?code=",
+            "newuserid" : "Surya001"
+            
+        }
+    }
+    
+```
 ##### Sample response:
 ###### Success Response
 ```sh
