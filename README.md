@@ -65,7 +65,7 @@
         "jenisotp":1,
         "data":
         {
-            "nexturl" : "https://moringaku.id/tools/password?code="
+            "nexturl" : "https://moringaku.id/tools/profile?code="
             
         }
     }
