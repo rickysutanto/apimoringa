@@ -285,7 +285,8 @@
 | MemberId | INT | Y | MemberId |
 | UserId | STRING | N | New User ID , tidak diisi jika ganti password saja/reset pwd|
 | Pwd | STRING | Y | New Password |
-
+| hashcode | STRING | N | kode OTP |
+| otpvalue | INT | N | nilai untuk update OTP |
 
 #### - Output:
 | Param | Data Type | Mandatory | Description |
@@ -305,6 +306,9 @@
         "memberid" : 15,
         "userid" :  "iksan0201"
         "pwd" : "3220102910",
+        "hashcode" : "ajkshash8as87d8as7d8asd8a7aduudf",
+        "otpvalue" : 1
+        
     }
     
 ```
@@ -422,48 +426,4 @@
 }
 ```
 #
-
-### 7. /UpdateOTP
-#### - update OTP dengan value tertentu
-- Sender : **PHP**
-- Target : **Engine**
-
-
-#### - Parameter:
-| Params | Data Type | Mandatory | Description |
-|--|--|--|--|
-| hashcode | STRING | Y | code . OTP |
-| value | INT | Y | nilai yang mau diberikan | 
-
-#### - Output:
-| Param | Data Type | Mandatory | Description |
-|--|--|--|--|
-| Result | INT| Y | 0 = ok |
-|||| 1 =  error |
-| Message | STRING | Y | Jika ada pesan error |
-
-#
-
-##### - Sample call:
-###### JQuery Ajax Call 
-```sh
-
-    data: 
-    {
-        "hashcode": "asdkhjsd89388eyfihjdv897434hkdhflsfsdfl2kj43u98",
-        "value" : 1    
-    }
-    
-```
-
-##### Sample response:
-###### Error Response
-```sh
-{
-    "result": 1,
-    "message": "error",
-}
-```
-#
-
 
