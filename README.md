@@ -354,7 +354,7 @@
 ```
 
 ##### Sample response:
-###### Success Response
+###### Error Response
 ```sh
 {
     "result": 1,
@@ -414,7 +414,50 @@
 ```
 
 ##### Sample response:
-###### Success Response
+###### Error Response
+```sh
+{
+    "result": 1,
+    "message": "error",
+}
+```
+#
+
+### 7. /UpdateOTP
+#### - update OTP dengan value tertentu
+- Sender : **PHP**
+- Target : **Engine**
+
+
+#### - Parameter:
+| Params | Data Type | Mandatory | Description |
+|--|--|--|--|
+| hashcode | STRING | Y | code . OTP |
+| value | INT | Y | nilai yang mau diberikan | 
+
+#### - Output:
+| Param | Data Type | Mandatory | Description |
+|--|--|--|--|
+| Result | INT| Y | 0 = ok |
+|||| 1 =  error |
+| Message | STRING | Y | Jika ada pesan error |
+
+#
+
+##### - Sample call:
+###### JQuery Ajax Call 
+```sh
+
+    data: 
+    {
+        "hashcode": "asdkhjsd89388eyfihjdv897434hkdhflsfsdfl2kj43u98",
+        "value" : 1    
+    }
+    
+```
+
+##### Sample response:
+###### Error Response
 ```sh
 {
     "result": 1,
