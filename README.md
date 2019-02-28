@@ -286,7 +286,7 @@
 | UserId | STRING | N | New User ID , tidak diisi jika ganti password saja/reset pwd|
 | Pwd | STRING | Y | New Password |
 | hashcode | STRING | N | kode OTP |
-| otpvalue | INT | N | nilai untuk update OTP |
+| disable | INT | N | nilai untuk update OTP |
 
 #### - Output:
 | Param | Data Type | Mandatory | Description |
@@ -307,7 +307,7 @@
         "userid" :  "iksan0201"
         "pwd" : "3220102910",
         "hashcode" : "ajkshash8as87d8as7d8asd8a7aduudf",
-        "otpvalue" : 1
+        "disable" : 1
         
     }
     
