@@ -237,6 +237,7 @@
 |--|--|--|--|
 | MemberId | INT | Y | MemberId  |
 | HashCode | STRING | Y | hashcode OTP yg mau di konfirmasi |
+| disable | INT | N | disable OTP jika diisi 1 |
 
 
 
@@ -256,7 +257,8 @@
     data: 
     {
         "memberid": 15,
-        "hashcode":"ABCDEWFGH1234567890"
+        "hashcode":"ABCDEWFGH1234567890",
+        "disable" : 1
     }
     
 ```
@@ -286,7 +288,7 @@
 | UserId | STRING | N | New User ID , tidak diisi jika ganti password saja/reset pwd|
 | Pwd | STRING | Y | New Password |
 | hashcode | STRING | N | kode OTP |
-| disable | INT | N | nilai untuk update OTP |
+| disable | INT | N | disable OTP, 1= disable |
 
 #### - Output:
 | Param | Data Type | Mandatory | Description |
