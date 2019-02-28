@@ -289,6 +289,7 @@
 | Pwd | STRING | Y | New Password |
 | hashcode | STRING | N | kode OTP |
 | disable | INT | N | disable OTP, 1= disable |
+| clientip | STRING | N | Client IP Address |
 
 #### - Output:
 | Param | Data Type | Mandatory | Description |
@@ -310,6 +311,7 @@
         "pwd" : "3220102910",
         "hashcode" : "ajkshash8as87d8as7d8asd8a7aduudf",
         "disable" : 1
+        "clientip" : "192.168.0.1"
         
     }
     
