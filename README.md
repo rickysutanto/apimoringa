@@ -22,6 +22,7 @@
 |||| 4 = Change Warisan |
 |||| 5 = Change user id |
 |||| 6 = not used |
+|||| 7 = Reset Password |
 | data | JSON | N | Data temporary |
 |||| "nexturl"       : url tujuan untuk dikirim ke email |
 |||| ----- Jenis OTP = 3 ----- |
@@ -57,12 +58,23 @@
 
 #
 ##### - Sample call:
-###### Change Password 
+###### Change / Reset Password  
 ```sh
     data: 
     {
         "memberid": 12.
         "jenisotp":2,
+        "data":
+        {
+            "nexturl" : "https://moringaku.id/tools/profile?code="
+            
+        }
+    }
+    
+    data: 
+    {
+        "memberid": 12.
+        "jenisotp":7,
         "data":
         {
             "nexturl" : "https://moringaku.id/tools/profile?code="
@@ -176,6 +188,7 @@
 |||| 4 = Change Warisan |
 |||| 5 = Change user id |
 |||| 6 = proses pembayaran setelah dapat welcome email |
+|||| 7 = Reset Password |
 | data | JSON | N | data temporary jika ada | 
 | Message| STRING | N | error message |
 
