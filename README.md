@@ -16,7 +16,7 @@
 | Params | Data Type | Mandatory | Description |
 |--|--|--|--|
 | MemberId | INT | Y | member id = id di table members |
-| JenisOTP | INT | Y | 1 = not used |
+| JenisOTP | INT | Y | 1 = Resend kode aktivasi |
 |||| 2 = Change Password |
 |||| 3 = Change Profile |
 |||| 4 = Change Warisan |
@@ -55,6 +55,23 @@
 |--|--|--|--|
 | Result | INT| Y | 0 = OK; 1 = Error |
 | Message| STRING | N | error message |
+
+#
+##### - Sample call:
+###### Resend OTP Aktivasi 
+```sh
+    data: 
+    {
+        "memberid": 412.
+        "jenisotp":1,
+        "data":
+        {
+            "nexturl" : "https://moringaku.id/tools/aktivasi?code="
+            
+        }
+    }
+    
+```
 
 #
 ##### - Sample call:
